@@ -20,7 +20,5 @@ function insertion(arr) {
 }
 
 const arr = [9, 8, 1, 5, 4];
-
 insertion(arr);
-
 console.log(arr);
