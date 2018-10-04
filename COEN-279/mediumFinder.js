@@ -1,3 +1,8 @@
+/**
+ * The function returns the median of an unsorted array.
+ * @param {string|integer} arr | unsorted array of strings or numbers
+ * @returns {string|integer} arr[i] | the median of the array.
+ */
 function mediumFinder(arr) {
 
     let larger, smaller;
@@ -16,10 +21,12 @@ function mediumFinder(arr) {
             }
         }
 
-        if (larger == arrayLength/2 && smaller == arrayLength - arrayLength/2)
+        if (larger == Math.floor(arrayLength/2) && smaller == arrayLength - Math.floor(arrayLength/2))
                 return arr[i]
         }
 }
 
-let fruit = ['apple', 'orange', 'pear', 'peach', 'banana'];
+let fruit = ['a', 'bat', 'case', 'mom', 'zoo'];
 console.log(mediumFinder(fruit));
+let num = [1, 3, 8, 0, 15];
+console.log(mediumFinder(num));
