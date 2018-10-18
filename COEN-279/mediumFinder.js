@@ -1,5 +1,7 @@
 /**
- * The function returns the median of an unsorted array.
+ * Brute Force Solution
+ * Complexity: Theta(n^2)
+ * The function returns the (left) median of an unsorted array.
  * @param {string|integer} arr | unsorted array of strings or numbers
  * @returns {string|integer} arr[i] | the median of the array.
  */
@@ -26,7 +28,7 @@ function mediumFinder(arr) {
         }
 }
 
-let fruit = ['a', 'bat', 'case', 'mom', 'zoo'];
+let fruit = ['a', 'bat', 'cate','mom' , 'case', 'zoo'];
 console.log(mediumFinder(fruit));
 let num = [1, 3, 8, 0, 15];
 console.log(mediumFinder(num));
