@@ -1,3 +1,10 @@
+// swap function helper
+function swap(array, i, j) {
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
 function selectionSort(arr) {
 
     let minIndex, temp;
@@ -13,9 +20,7 @@ function selectionSort(arr) {
         }
             // swap the two elements, if the minimum isn't in the position
         if (i !== minIndex) {
-                temp = arr[i];
-                arr[i] = arr[minIndex];
-                arr[minIndex] = temp;
+                swap(arr, i, minIndex);
         }
     }
 
