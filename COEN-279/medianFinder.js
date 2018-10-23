@@ -5,7 +5,7 @@
  * @param {string|integer} arr | unsorted array of strings or numbers
  * @returns {string|integer} arr[i] | the median of the array.
  */
-function mediumFinder(arr) {
+function medianFinder(arr) {
 
     let larger, smaller;
     const arrayLength = arr.length;
@@ -29,6 +29,6 @@ function mediumFinder(arr) {
 }
 
 let fruit = ['a', 'bat', 'cate','mom' , 'case', 'zoo'];
-console.log(mediumFinder(fruit));
+console.log(medianFinder(fruit));
 let num = [1, 3, 8, 0, 15];
-console.log(mediumFinder(num));
+console.log(medianFinder(num));
