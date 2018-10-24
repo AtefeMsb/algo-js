@@ -2,7 +2,7 @@
  * the method finds all string positions of pattern in the text
  * @param {string}  text
  * @param {string}  pattern
- * @return {array} result - array of pattern positions in the text
+ * @return {array} result | array of pattern positions in the text
  */
 function patternFinder(text, pattern) {
     let result = [];
