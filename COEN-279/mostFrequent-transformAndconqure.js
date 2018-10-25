@@ -16,14 +16,15 @@ function mostFrequent(arr) {
         return a - b;
     });
 
+    let i = 0;
     console.log(arr);
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] === arr[i-1]) {
+    for (i = 1; i < arr.length; i++) {
+        if (arr[i] === arr[i - 1]) {
             counter++;
         } else {
             if (counter > frequentCounter) {
                 frequentCounter = counter;
-                frequentValue = arr[i-1];
+                frequentValue = arr[i - 1];
             }
             counter = 1; // to start counting a new chunk
         }   
@@ -31,10 +32,10 @@ function mostFrequent(arr) {
     // If last element is most frequent
     if (counter > frequentCounter) {
         frequentCounter = counter;
-        frequentValue = arr[i-1];
+        frequentValue = arr[i - 1];
     }
 
     return frequentValue;
 }
-const a = [1, 2, 4, 2, 3, 5, 100, 2, 100, 100];
+const a = [1, 2, 4, 2, 3, 5, 100, 2, 100, 100, 100];
 console.log(mostFrequent(a));
