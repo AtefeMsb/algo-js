@@ -1,7 +1,12 @@
+/**
+ * returns the least number of hops if c will be traversered with 1 or 2 step long steps.
+ * 0 are allowed to step on. 1 are not allowed.
+ * @param {int} c | a binary array 
+ */
 function jumpingOnClouds(c) {
 
-    // If c (array) empty or does not exist
-    if (c === undefined || c.length == 0) 
+    // If c (array) empty or it is falsy
+    if (!c || c.length == 0) 
         { return null;}
 
     let position = 0;
