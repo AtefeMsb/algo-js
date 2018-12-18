@@ -14,10 +14,12 @@ Solution.prototype.reset = function() {
     return this.nums;
 };
 
+
 /**
  * Returns a random shuffling of the array.
  * @return {number[]}
  */
+/*
 Solution.prototype.shuffle = function() {
 
     // use a Set to make sure each index has been picked just once
@@ -33,6 +35,35 @@ Solution.prototype.shuffle = function() {
 
         set.add(index);
         shuffledArray[i] = this.nums[index];
+    }
+  
+    // returns a random permutation of the nums array
+    return shuffledArray;
+};
+*/
+
+/**
+ * Fisher-Yates Shuffle Modern Algorithm 
+ */
+Solution.prototype.shuffle = function() {
+
+	let shuffledArray = [];
+	for (let num of this.nums) {
+		shuffledArray.push(num);
+	}
+    let index;
+
+    let i = this.nums.length - 1;
+    while (i > 0) {
+
+        index = randomNumber(0, i);
+
+        // swap i position with index position
+		
+        let temp = shuffledArray[i];
+        shuffledArray[i] = shuffledArray[index];
+        shuffledArray[index] = temp;
+
     }
   
     // returns a random permutation of the nums array
@@ -58,8 +89,7 @@ function randomNumber(min, max) {
  * var param_2 = obj.shuffle()
  */
 
-let solution = new Solution([1, 2, 3, 4, 5]);
-let shuffledArray = solution.shuffle();
-
-console.log(shuffledArray);
+ let nums = [1, 2, 3, 4, 5];
+let solution = new Solution(nums);
+console.log(solution.shuffle());
 console.log(solution.reset());
