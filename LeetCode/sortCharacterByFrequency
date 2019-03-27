@@ -1,0 +1,53 @@
+// https://leetcode.com/problems/sort-characters-by-frequency/
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+
+function Record(item) {
+    //let this = {};
+    this.char = item[0];
+    this.count = item[1];
+    //return this;
+}
+
+// function getRecord(item) {
+//     let record = {};
+//     record.char = item[0];
+//     record.count = item[1];
+//     return record;
+// }
+
+
+var frequencySort = function(s) {
+    
+    const frequencyMap = new Map();
+    for (let char of s) {
+        let count = frequencyMap.get(char) || 0;
+        frequencyMap.set(char, ++count);
+    }
+    
+  
+    // convert map to an array
+    // const frequencyArray = [...frequencyMap.entries()];
+    const frequencyArray = [];
+    for (let item of frequencyMap.entries()) {
+        frequencyArray.push(new Record(item));
+    }
+    
+    frequencyArray.sort((recordA, recordB) => recordB.count - recordA.count);
+    
+    let orderedStr = "";
+    
+    for (let i = 0; i < frequencyArray.length; ++i) {
+        let char = frequencyArray[i].char;
+        let count = frequencyArray[i].count;
+        
+        for (let j = 0; j < count; ++j) {
+            orderedStr += char;
+        }
+    }
+
+    return orderedStr;
+};
